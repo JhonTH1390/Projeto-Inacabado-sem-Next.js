@@ -28,3 +28,7 @@ Em seguida ,
 utilize : npm run dev , para criar um servidor local , pegue o link e o abra em seu navegador (Ex: http://localhost:0000) ;
 
 Assim , a página deve estar pronta para uso ;
+
+## ERROS!!!
+Devido alguns erros , perdi as configurções do node.js , não conseguindo assim aplicá-lo ;
+O html , css e .js são a ideia principal de como o site funcionaria ;
