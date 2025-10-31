@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+
+    <title>Gestão de Cartões de Crédito</title>
+</head>
+<body>
+<main>
+<!--PÁGINA PRINCIPAL-->
+<div id="Inicio">
+    <h1>GESTÃO DE SEUS CARTÕES</h1>
+
+    <h5>Adicione e gerencie seus Cartões de Crédito</h5>
+    <button onclick="mostrarPagina('Frente')" title="Adicionar Cartão" class="Adicionar" type = "button">+</button>
+
+
+<!--DADOS SALVOS DOS CARTÕES-->
+    <fieldset id="ListaCartoes">
+        <h4>Consulte os dados de seus cartões salvos abaixo :</h4>
+        <hr>
+        <div id="MeusCartoes"></div>
+    </fieldset>
+ </div>  
+  
+<div id="Carta">
+    <!-- ADICIONAR INFORMAÇÔES NA FRENTE DO CARTÂO -->
+    <div id="Frente" class="face">
+        <img src="Frente.png" alt="Frente do Cartão">
+    <form id="P1info" action="/Envia_Frente" method="post">
+        
+        <fieldset class="FFrente">
+            <legend>Frente do Cartão</legend>
+            <p>Preencha as informações necessárias :</p>
+
+            <label for="nome">Nome do Titular :</label>
+            <input style="width: 50%" required type="text" id="nome" name="nome" maxlength="100" autocomplete="name">
+            <br><hr>
+            <label for="num">Número do Cartão :</label>
+            <input required inputmode="numeric" type="text" id="num" name="num" placeholder="1234 5678 9012 3456" pattern="\d{4} \d{4} \d{4} \d{4}">
+            <br><br>
+            <button type="button" onclick="Girar();">Enviar/Próximo</button>
+        
+        </fieldset>
+
+    </form>
+    </div>
+    <!-- ADICIONAR INFORMAÇÔES NO VERSO DO CARTÂO -->
+    <div id="Verso" class="face">
+        <img src="Verso.png" alt="Verso do Cartão">
+    <form id="P2info" action="/Envia_Verso" method="post">
+        <fieldset class="VVerso">
+            <legend>Verso do Cartão</legend>
+            <p>Preencha as informações necessárias :</p>
+
+            <label for="nasc">Data de Nascimento :</label>
+            <input required type="date" id="nasc" name="nasc">
+            <br><hr>
+            <label for="CPF">Número do CPF :</label>
+            <input required type="text" id="CPF" name="CPF" placeholder="123.456.789-00" maxlength="14">
+            <br><br>
+            <input onclick="mostrarPagina('Concluido')" type="button" value="Finalizar">
+        
+        </fieldset>
+    </form>
+    </div>
+</div>
+<!--FIM DA PÁGINA DE VOLTA AO COMEÇO-->
+    <div id="Concluido">
+        <p>Cartão adicionado com sucesso!</p>
+        <p>Clique no botão abaixo para voltar a Página Principal</p>
+        <button onclick="salvarCartao(); " class="Finalizar" type="button">Página Principal</button>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

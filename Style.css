@@ -1,0 +1,136 @@
+body {
+    background-color: rgb(57, 173, 188);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    font-family: sans-serif;
+}
+
+/*OCULTAR SETAS EM TYPE="NUMBER"*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/**/
+
+/*Página Principal*/
+
+#Inicio {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; gap: 1rem;
+}
+
+.Adicionar {
+    color: black;
+    background-color: blueviolet;
+    /* background-color: #e86a33; */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.Adicionar:hover {
+    background-color: rgb(230, 94, 225);
+}
+
+#ListaCartoes {
+    margin-top: 75px;
+}
+/*Animação do Cartão*/
+main { 
+    perspective: 1000px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    transform: scale(0.7);
+    transform-origin: center center;
+    display: block;
+    margin: auto;
+}
+
+#Carta {
+    width: 700px;
+    height: 250px;
+    margin: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    display: none;
+    transform: rotateY(0deg);
+    transform-origin: center center;
+    position: relative;
+    display: none;
+}
+#Carta.flipped {
+    transform: rotateY(180deg);
+}
+
+#Frente, #Verso {
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.face {
+    backface-visibility: hidden;
+    transition: transform 0.8s;
+    
+}
+
+/*Frente do Cartão*/
+.FFrente {
+    background-color: azure;
+    width: 75%;
+    margin: auto;
+}
+
+/*Verso do Cartão*/
+#Verso {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    
+}
+
+.VVerso {
+    background-color: azure;
+    width: 75%;
+    margin: auto;
+}
+
+/*Página Final*/
+#Concluido {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; gap: 1rem;
+}
+
+/*Melhorias posteriores*/
+#Inicio, #Concluido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
